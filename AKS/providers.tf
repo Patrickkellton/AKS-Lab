@@ -19,6 +19,14 @@ terraform {
       version = "0.9.1"
     }
   }
+  backend "remote" {
+  hostname     = "app.terraform.io"
+  organization = "Shakti-Organization"
+
+  workspaces {
+    name = "Shakt-API-Workspace"
+  }
+}
 }
 
 provider "azurerm" {
